@@ -15,4 +15,7 @@ def candidates(pk):
     return utils.get_by_pk(pk)
 
 
+@app.route('/skills/<skill>')
+def get_skills(skill):
+    return utils.get_by_skill(skill)
 app.run()

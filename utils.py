@@ -36,7 +36,14 @@ def get_by_pk(pk):
     return result
 
 
-def get_by_skill(skill_name):
+def get_by_skill(skill):
+    result = '<pre>'
     for candidate in load_candidates():
-        if skill_name in candidate['skills']:
-            print(candidate['name'])
+        if skill in candidate['skills']:
+            result += f"""
+                {candidate['name']}
+                {candidate['position']}
+                {candidate['skills']}\n"""
+
+    result += '</pre>'
+    return result
