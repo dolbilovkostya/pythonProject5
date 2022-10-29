@@ -34,4 +34,4 @@ def get_skills(skill):
     return utils.get_by_skill(skill)
 
 
-app.run(host='0.0.0.0', port=8000)
+app.run(host='0.0.0.0', port=800)

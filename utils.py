@@ -53,7 +53,7 @@ def get_by_skill(skill):
     """
     result = '<pre>'
     for candidate in load_candidates():
-        if skill in candidate['skills']:
+        if skill.lower() in candidate['skills'].lower():
             result += f"""
                 {candidate['name']}
                 {candidate['position']}
