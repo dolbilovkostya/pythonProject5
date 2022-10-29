@@ -36,7 +36,7 @@ def get_by_pk(pk):
     for candidate in load_candidates():
         if pk == candidate['pk']:
             result += f""" 
-                {candidate['picture']}\n
+                <img src='{candidate['picture']}'>\n
                 {candidate['name']}\n
                 {candidate['position']}\n
                 {candidate['skills']}\n"""
@@ -53,7 +53,7 @@ def get_by_skill(skill):
     """
     result = '<pre>'
     for candidate in load_candidates():
-        if skill.lower() in candidate['skills'].lower():
+        if skill.lower() in candidate['skills'].lower().split(', '):
             result += f"""
                 {candidate['name']}
                 {candidate['position']}
